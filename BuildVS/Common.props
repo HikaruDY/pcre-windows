@@ -24,7 +24,7 @@
 		</Link>
 	</ItemDefinitionGroup>
 
-	<ItemDefinitionGroup Condition="('$(ProjectName)'=='pcre')">
+	<ItemDefinitionGroup Condition="('$(ProjectName)'=='pcre') or ('$(ProjectName)'=='pcre-lib')">
 		<ClCompile>
 		<PreprocessorDefinitions>_USRDLL;PCRE_EXPORTS;_CRT_SECURE_NO_WARNINGS;HAVE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
 		</ClCompile>
