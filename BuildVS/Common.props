@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<TrackFileAccess>false</TrackFileAccess>
+	</PropertyGroup>
+	<PropertyGroup Label="UserMacros">
+		<root>$(SolutionDir)/../</root>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<ClCompile>
+			<MultiProcessorCompilation>true</MultiProcessorCompilation>
+			<Optimization>Full</Optimization>
+			<InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+			<IntrinsicFunctions>true</IntrinsicFunctions>
+			<FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+			<OmitFramePointers>true</OmitFramePointers>
+			<BufferSecurityCheck>false</BufferSecurityCheck>
+			<FunctionLevelLinking>true</FunctionLevelLinking>
+			<EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+			<PreprocessorDefinitions>DWS;NDEBUG;WIN32;WINNT;_WINDOWS;HAVE_MEMMOVE;(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>ws2_32.lib;Mswsock.lib;Rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+
+	<ItemDefinitionGroup Condition="('$(ProjectName)'=='pcre')">
+		<ClCompile>
+		<PreprocessorDefinitions>_USRDLL;PCRE_EXPORTS;_CRT_SECURE_NO_WARNINGS;HAVE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+
+</Project>
