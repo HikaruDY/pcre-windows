@@ -1,5 +1,6 @@
 # Generated
 Release
+TEMP
 *.obj
 *.exp
 *.pdb
