@@ -1,6 +1,14 @@
 Building PCRE without using autotools
 -------------------------------------
 
+NOTE: This document relates to PCRE releases that use the original API, with
+library names libpcre, libpcre16, and libpcre32. January 2015 saw the first
+release of a new API, known as PCRE2, with release numbers starting at 10.00
+and library names libpcre2-8, libpcre2-16, and libpcre2-32. The old libraries
+(now called PCRE1) are still being maintained for bug fixes, but there will be
+no new development. New projects are advised to use the new PCRE2 libraries.
+
+
 This document contains the following sections:
 
   General
@@ -171,8 +179,8 @@ can skip ahead to the CMake section.
        pcre16_version.c
        pcre16_xclass.c
 
- (8) If you want to build a 16-bit library (as well as, or instead of the 8-bit
-     or 32-bit libraries) repeat steps 5-6 with the following files:
+ (8) If you want to build a 32-bit library (as well as, or instead of the 8-bit
+     or 16-bit libraries) repeat steps 5-6 with the following files:
 
        pcre32_byte_order.c
        pcre32_chartables.c
@@ -752,13 +760,14 @@ The character code used is EBCDIC, not ASCII or Unicode. In z/OS, UNIX APIs and
 applications can be supported through UNIX System Services, and in such an
 environment PCRE can be built in the same way as in other systems. However, in
 native z/OS (without UNIX System Services) and in z/VM, special ports are
-required. For details, please see this web site:
+required. PCRE1 version 8.39 is available in file 882 on this site:
 
-  http://www.zaconsultants.net
+  http://www.cbttape.org
 
-There is also a mirror here:
+Everything, source and executable, is in EBCDIC and native z/OS file formats.
+However, this software is not maintained and will not be upgraded. If you are
+new to PCRE you should be looking at PCRE2 (version 10.30 or later).
 
-  http://www.vsoft-software.com/downloads.html
-
-==========================
-Last Updated: 14 May 2013
+===============================
+Last Updated: 13 September 2017
+===============================
