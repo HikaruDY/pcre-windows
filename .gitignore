@@ -1,12 +1,27 @@
-# Generated
-Release
-TEMP
-*.obj
-*.exp
-*.pdb
-*.cache
+# Project Entertainments* common ignore list
+#	(C)2023 Project Entertainments*
 
-# VisualStudio
+# Work directory (VS)
+/BuildVS/.vs
+/BuildVS/TEMP
+/BuildVS/Release*
+/BuildVS/Debug*
+/BuildVS/libs
+
+# Work directory (Script)
+/BuildEx/TEMP
+/BuildEx/Release*
+/BuildEx/Debug*
+/BuildEx/libs
+
+# Work directory (Project Studio)
+/BuildPS/TEMP
+/BuildPS/Release*
+/BuildPS/Debug*
+/BuildPS/libs
+
+
+# Generated files
 *.suo
 *.vcxproj.user
 *.vcxproj.filters
@@ -16,8 +31,31 @@ TEMP
 *.log
 *.tlog
 
-# OS related extra files
-Git.cmd
+*.exe
+*.dll
+*.lib
+*.exp
+*.pdb
+*.obj
+*.cache
+
+*.o
+*.a
+*.lo
+*.la
+*.Po
+
+# OS related
 Thumbs.db
 .DS_Store
 
+# This project
+# Generated
+Release
+TEMP
+*.obj
+*.exp
+*.pdb
+*.cache
+
+# VisualStudio

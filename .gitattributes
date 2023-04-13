@@ -1,0 +1,14 @@
+# Project Entertainments* common git attributes
+#	(C)2023 Project Entertainments*
+
+*.bat		text eol=crlf
+*.cmd		text eol=crlf
+*.sln		text eol=crlf
+*.props		text eol=crlf
+*.vcxproj	text eol=crlf
+*.csproj	text eol=crlf
+
+.gitignore	export-ignore
+.gitattributes	export-ignore
+
+# This project
