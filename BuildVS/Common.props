@@ -1,11 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<PropertyGroup>
-		<TrackFileAccess>false</TrackFileAccess>
-	</PropertyGroup>
 	<PropertyGroup Label="UserMacros">
 		<root>$(SolutionDir)/../</root>
 	</PropertyGroup>
+
+	<!-- $(PlatformID) macro -->
+	<PropertyGroup Label="UserMacros">
+		<PlatformID>unknown</PlatformID>
+	</PropertyGroup>
+
+	<PropertyGroup Label="UserMacros" Condition="('$(Platform)'=='Win32')">
+		<PlatformID>x86</PlatformID>
+	</PropertyGroup>
+	<PropertyGroup Label="UserMacros" Condition="('$(Platform)'=='x64')">
+		<PlatformID>x64</PlatformID>
+	</PropertyGroup>
+	<PropertyGroup Label="UserMacros" Condition="('$(Platform)'=='Itanium')">
+		<PlatformID>ia64</PlatformID>
+	</PropertyGroup>
+	<PropertyGroup Label="UserMacros" Condition="('$(Platform)'=='ARM')">
+		<PlatformID>a32</PlatformID>
+	</PropertyGroup>
+	<PropertyGroup Label="UserMacros" Condition="('$(Platform)'=='ARM64')">
+		<PlatformID>a64</PlatformID>
+	</PropertyGroup>
+	<PropertyGroup Label="UserMacros" Condition="('$(Platform)'=='ARM64EC')">
+		<PlatformID>a64ec</PlatformID>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<IntDir>$(SolutionDir)\TEMP\$(PlatformID)/</IntDir>
+		<OutDir>$(SolutionDir)$(Configuration)_$(PlatformID)/</OutDir>
+		<TrackFileAccess>false</TrackFileAccess>
+		<UseDebugLibraries>false</UseDebugLibraries>
+		<EmbedManifest>false</EmbedManifest>
+		<PlatformToolset>v143</PlatformToolset>
+	</PropertyGroup>
+
 	<ItemDefinitionGroup>
 		<ClCompile>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -16,12 +47,17 @@
 			<OmitFramePointers>true</OmitFramePointers>
 			<BufferSecurityCheck>false</BufferSecurityCheck>
 			<FunctionLevelLinking>true</FunctionLevelLinking>
-			<EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
 			<PreprocessorDefinitions>DWS;NDEBUG;WIN32;WINNT;_WINDOWS;HAVE_MEMMOVE;(PreprocessorDefinitions)</PreprocessorDefinitions>
 		</ClCompile>
 		<Link>
 			<AdditionalDependencies>ws2_32.lib;Mswsock.lib;Rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
 		</Link>
+	</ItemDefinitionGroup>
+
+	<ItemDefinitionGroup Condition="('$(PlatformID)'=='x86')">
+		<ClCompile>
+			<EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+		</ClCompile>
 	</ItemDefinitionGroup>
 
 	<ItemDefinitionGroup Condition="('$(ProjectName)'=='pcre') or ('$(ProjectName)'=='pcre-lib')">
