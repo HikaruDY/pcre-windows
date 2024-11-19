@@ -29,12 +29,12 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<IntDir>$(SolutionDir)\TEMP\$(PlatformID)/</IntDir>
+		<IntDir>$(SolutionDir)\TEMP\$(Configuration)_$(PlatformID)\$(MSBuildProjectName)\</IntDir>
 		<OutDir>$(SolutionDir)$(Configuration)_$(PlatformID)/</OutDir>
 		<TrackFileAccess>false</TrackFileAccess>
 		<UseDebugLibraries>false</UseDebugLibraries>
 		<EmbedManifest>false</EmbedManifest>
-		<PlatformToolset>v143</PlatformToolset>
+		<PlatformToolset>v100</PlatformToolset>
 	</PropertyGroup>
 
 	<ItemDefinitionGroup>
@@ -53,6 +53,14 @@
 			<AdditionalDependencies>ws2_32.lib;Mswsock.lib;Rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
 		</Link>
 	</ItemDefinitionGroup>
+
+	<PropertyGroup Condition="'$(MSBuildAssemblyVersion)'=='17.0'">
+		<PlatformToolset>v143</PlatformToolset>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(PlatformID)'=='a64ec'">
+		<BuildAsX>true</BuildAsX>
+	</PropertyGroup>
 
 	<ItemDefinitionGroup Condition="('$(PlatformID)'=='x86')">
 		<ClCompile>

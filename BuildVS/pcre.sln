@@ -9,6 +9,7 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|ARM = Release|ARM
 		Release|ARM64 = Release|ARM64
+		Release|ARM64EC = Release|ARM64EC
 		Release|Itanium = Release|Itanium
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
@@ -18,6 +19,8 @@ Global
 		{38C63D7D-0B80-5BF3-7865-D6FC4A3EB0F1}.Release|ARM.Build.0 = Release|ARM
 		{38C63D7D-0B80-5BF3-7865-D6FC4A3EB0F1}.Release|ARM64.ActiveCfg = Release|ARM64
 		{38C63D7D-0B80-5BF3-7865-D6FC4A3EB0F1}.Release|ARM64.Build.0 = Release|ARM64
+		{38C63D7D-0B80-5BF3-7865-D6FC4A3EB0F1}.Release|ARM64EC.ActiveCfg = Release|ARM64EC
+		{38C63D7D-0B80-5BF3-7865-D6FC4A3EB0F1}.Release|ARM64EC.Build.0 = Release|ARM64EC
 		{38C63D7D-0B80-5BF3-7865-D6FC4A3EB0F1}.Release|Itanium.ActiveCfg = Release|Itanium
 		{38C63D7D-0B80-5BF3-7865-D6FC4A3EB0F1}.Release|Itanium.Build.0 = Release|Itanium
 		{38C63D7D-0B80-5BF3-7865-D6FC4A3EB0F1}.Release|x64.ActiveCfg = Release|x64
