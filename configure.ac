@@ -30,6 +30,9 @@ AM_INIT_AUTOMAKE([dist-bzip2 dist-zip])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 AC_CONFIG_HEADERS(config.h)
 
+# VCS friendly mode
+AM_MAINTAINER_MODE()
+
 # This is a new thing required to stop a warning from automake 1.12
 m4_ifdef([AM_PROG_AR], [AM_PROG_AR])
 
