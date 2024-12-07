@@ -23,8 +23,8 @@ m4_define(libpcre32_version, [0:13:0])
 m4_define(libpcreposix_version, [0:7:0])
 m4_define(libpcrecpp_version, [0:2:0])
 
-AC_PREREQ(2.57)
-AC_INIT(PCRE, pcre_major.pcre_minor[]pcre_prerelease, , pcre)
+AC_PREREQ([2.71])
+AC_INIT([PCRE],[pcre_major.pcre_minorpcre_prerelease],[],[pcre])
 AC_CONFIG_SRCDIR([pcre.h.in])
 AM_INIT_AUTOMAKE([dist-bzip2 dist-zip])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
@@ -88,7 +88,10 @@ AC_LANG_POP
 AC_TYPE_INT64_T
 
 AC_PROG_INSTALL
-AC_LIBTOOL_WIN32_DLL
+AC_REQUIRE(AC_CANONICAL_HOST)_LT_SET_OPTION([LT_INIT],[win32-dll])
+m4_warn([obsolete],[AC_LIBTOOL_WIN32_DLL: Remove this warning and the call to _LT_SET_OPTION when you
+put the 'win32-dll' option into LT_INIT's first parameter.])
+
 LT_INIT
 AC_PROG_LN_S
 
@@ -478,7 +481,6 @@ HAVE_BCOPY is defined. If your system has neither bcopy() nor memmove(), make
 sure both macros are undefined; an emulation function will then be used. */])
 
 # Checks for header files.
-AC_HEADER_STDC
 AC_CHECK_HEADERS(limits.h sys/types.h sys/stat.h dirent.h)
 AC_CHECK_HEADERS([windows.h], [HAVE_WINDOWS_H=1])
 
